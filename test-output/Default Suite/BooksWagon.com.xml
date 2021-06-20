@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="DESKTOP-2EVVVF8" name="com.bridgelabz.test.LoginTest" tests="1" failures="0" timestamp="20 Jun 2021 05:15:33 GMT" time="34.437" errors="0">
+  <testcase name="@AfterTest teardown" time="0.0" classname="com.bridgelabz.test.LoginTest">
+    <failure type="java.io.FileNotFoundException" message="C:\Users\admin\IdeaProjects\BooksWagon.com\test-output\testng-results.xml (The system cannot find the path specified)">
+      <![CDATA[java.io.FileNotFoundException: C:\Users\admin\IdeaProjects\BooksWagon.com\test-output\testng-results.xml (The system cannot find the path specified)
+	at java.io.FileInputStream.open0(Native Method)
+	at java.io.FileInputStream.open(FileInputStream.java:195)
+	at java.io.FileInputStream.<init>(FileInputStream.java:138)
+	at java.io.FileInputStream.<init>(FileInputStream.java:93)
+	at sun.net.www.protocol.file.FileURLConnection.connect(FileURLConnection.java:90)
+	at sun.net.www.protocol.file.FileURLConnection.getInputStream(FileURLConnection.java:188)
+	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.setupCurrentEntity(XMLEntityManager.java:622)
+	at com.sun.org.apache.xerces.internal.impl.XMLVersionDetector.determineDocVersion(XMLVersionDetector.java:150)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:831)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:796)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:142)
+	at com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(DOMParser.java:247)
+	at com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(DocumentBuilderImpl.java:339)
+	at javax.xml.parsers.DocumentBuilder.parse(DocumentBuilder.java:205)
+	at org.automationtesting.excelreport.Xl.generateReport(Xl.java:57)
+	at com.bridgelabz.utils.ExcelReport.ExcelReport(ExcelReport.java:12)
+	at com.bridgelabz.base.Base.teardown(Base.java:40)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+... Removed 19 stack frames]]>
+    </failure>
+  </testcase>
+  <testcase name="LoginTest" time="13.176" classname="com.bridgelabz.test.LoginTest"/>
+</testsuite>

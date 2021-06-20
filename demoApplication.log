@@ -1,0 +1,6 @@
+[main] INFO  com.bridgelabz.base.Base  - click login Btn
+[main] INFO  com.bridgelabz.base.Base  - enter user name
+[main] INFO  com.bridgelabz.base.Base  - enter password
+[main] INFO  com.bridgelabz.base.Base  - click submit btn
+[main] INFO  com.bridgelabz.base.Base  - click user profile opt
+[main] INFO  com.bridgelabz.base.Base  - click logout btn
