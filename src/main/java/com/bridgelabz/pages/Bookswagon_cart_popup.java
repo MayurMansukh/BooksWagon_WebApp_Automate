@@ -11,9 +11,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import java.awt.*;
-import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
 
 import static com.bridgelabz.base.Base.logger;
 
@@ -30,14 +27,17 @@ public class Bookswagon_cart_popup {
     @FindBy(partialLinkText = "Greatest Horror")
     WebElement BooksSelect;
 
-    @FindBy(className = "btn-red")
+    @FindBy(xpath = "//*[@id=\"ctl00_phBody_ProductDetail_divAddtoCart\"]/a/input")
     WebElement BuyNowBtn;
+
 
     @FindBy(id = "cboxClose")
     WebElement closeBtn;
 
     @FindBy(xpath = "//*[@id=\"topright-menu\"]/div[2]/div[1]/a")
     WebElement CartBtn;
+
+
 
     public Bookswagon_cart_popup(WebDriver driver) {
         this.driver = driver;
@@ -57,7 +57,6 @@ public class Bookswagon_cart_popup {
     public void changeQuantity() {
         logger.info("click cart btn");
         CartBtn.click();
-
     }
 
     public void updateQuantity() throws InterruptedException {

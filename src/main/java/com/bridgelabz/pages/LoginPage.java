@@ -14,6 +14,7 @@ import static com.bridgelabz.base.Base.logger;
 
 public class LoginPage {
     WebDriver driver;
+
     @FindBy(xpath = "//*[@id=\"ctl00_divLogin\"]/ul/li[1]/a")
     WebElement login;
 
