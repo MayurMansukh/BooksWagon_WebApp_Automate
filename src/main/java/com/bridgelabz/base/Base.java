@@ -23,7 +23,7 @@ public class Base {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(50, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
         driver.get("https://www.bookswagon.com/");
         connection.check_internet_connectivity(); // check internet connection
         extentReport.startTest();
@@ -34,6 +34,6 @@ public class Base {
     public void teardown() throws Exception {
         extentReport.endTest(); // create extent report
         //report.ExcelReport(); // create excel report
-        //driver.close();
+        driver.close();
     }
 }

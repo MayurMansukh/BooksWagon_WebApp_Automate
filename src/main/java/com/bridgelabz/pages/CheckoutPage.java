@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
 public class CheckoutPage {
 
@@ -29,10 +30,6 @@ public class CheckoutPage {
     @FindBy(xpath = "//*[@id=\"ctl00_cpBody_plnTransactionDecline\"]/a[2]/input")
     WebElement contShoppingBtn;
 
-
-
-
-
     public CheckoutPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
     }
@@ -41,13 +38,20 @@ public class CheckoutPage {
         payNowWithBtn.click();
         cardNO.sendKeys("4005550000000019");
         expireMonth.click();
-        expireMonth.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ENTER);
+        Select select = new Select(expireMonth);
+        select.selectByVisibleText("Apr (04)");
+        Thread.sleep(1000);
         expireYear.click();
-        expireYear.sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ENTER);
+        Select select2 = new Select(expireYear);
+        select2.selectByVisibleText("2023");
+        Thread.sleep(1000);
         cvvNo.sendKeys("111");
         payNowBtn.click();
         Thread.sleep(1000);
-        contShoppingBtn.click();
+
     }
 
+    public void clickContShopping() {
+        contShoppingBtn.click();
+    }
 }
