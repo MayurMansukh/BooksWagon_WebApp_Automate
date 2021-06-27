@@ -558,3 +558,9 @@
 [main] INFO  com.bridgelabz.base.Base  - click submit btn
 [main] INFO  com.bridgelabz.base.Base  - add product into cart
 [main] INFO  com.bridgelabz.base.Base  - Place order
+[main] INFO  com.bridgelabz.base.Base  - click login Btn
+[main] INFO  com.bridgelabz.base.Base  - enter user name
+[main] INFO  com.bridgelabz.base.Base  - enter password
+[main] INFO  com.bridgelabz.base.Base  - click submit btn
+[main] INFO  com.bridgelabz.base.Base  - add product into cart
+[main] INFO  com.bridgelabz.base.Base  - Place order

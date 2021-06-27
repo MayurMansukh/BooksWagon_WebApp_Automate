@@ -1,11 +1,12 @@
 package com.bridgelabz.pages;
 
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+
+import static com.bridgelabz.base.Base.logger;
 
 public class CheckoutPage {
 
@@ -35,7 +36,9 @@ public class CheckoutPage {
     }
 
     public void selectPaymentOpt() throws InterruptedException {
+        logger.info("select payment option");
         payNowWithBtn.click();
+        logger.info("select sub payment option");
         cardNO.sendKeys("4005550000000019");
         expireMonth.click();
         Select select = new Select(expireMonth);
@@ -48,10 +51,11 @@ public class CheckoutPage {
         cvvNo.sendKeys("111");
         payNowBtn.click();
         Thread.sleep(1000);
-
+        logger.info("get payment success message");
     }
 
     public void clickContShopping() {
+        logger.info("continue shopping");
         contShoppingBtn.click();
     }
 }

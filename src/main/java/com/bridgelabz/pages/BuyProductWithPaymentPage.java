@@ -65,7 +65,6 @@ public class BuyProductWithPaymentPage {
     }
 
     public void placeOrder() throws InterruptedException {
-        JavascriptExecutor js = (JavascriptExecutor)driver;
         logger.info("Place order");
         driver.switchTo().frame(1);
         Thread.sleep(500);

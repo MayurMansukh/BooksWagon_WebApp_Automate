@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import static com.bridgelabz.base.Base.logger;
+
 public class ReviewOrderPage {
 
     @FindBy(id = "ctl00_cpBody_ShoppingCart_lvCart_txtGiftMessage")
@@ -22,6 +24,7 @@ public class ReviewOrderPage {
     }
 
     public void reviewOrder(){
+        logger.info("review order");
         giftMsg.sendKeys("congratulation!!!!!!");
         instruction.sendKeys("Thank you");
         saveBtn.click();

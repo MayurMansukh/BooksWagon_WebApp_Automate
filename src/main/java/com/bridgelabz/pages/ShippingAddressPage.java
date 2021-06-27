@@ -7,6 +7,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import static com.bridgelabz.base.Base.logger;
+
 public class ShippingAddressPage {
 
     @FindBy(id = "ctl00_cpBody_txtNewRecipientName")
@@ -46,6 +48,7 @@ public class ShippingAddressPage {
     }
 
     public void enter_Shipping_Address() throws InterruptedException {
+        logger.info("enter address details");
         recipientName.sendKeys("Mayur Mansukh");
         companyName.sendKeys("BridgeLabz");
         address.sendKeys("ghatkoper West mumbai");
