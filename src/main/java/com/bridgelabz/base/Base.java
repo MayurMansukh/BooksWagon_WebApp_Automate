@@ -19,7 +19,6 @@ public class Base {
     checkInternerConnection connection = new checkInternerConnection();
     Send_TestReport_By_Email email = new Send_TestReport_By_Email();
     ExtentReport extentReport = new ExtentReport();
-    ExcelReport report = new ExcelReport();
 
     @BeforeTest
     public void setup() {
@@ -37,7 +36,6 @@ public class Base {
     public void teardown() throws Exception {
         extentReport.endTest(); // create extent report
         //email.sendEmail();
-        report.ExcelReport(); // create excel report
         driver.close();
     }
 }
