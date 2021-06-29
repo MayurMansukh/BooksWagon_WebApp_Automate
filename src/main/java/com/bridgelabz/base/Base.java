@@ -1,6 +1,7 @@
 package com.bridgelabz.base;
 
 import com.bridgelabz.utils.ExtentReport;
+import com.bridgelabz.utils.Send_TestReport_By_Email;
 import com.bridgelabz.utils.checkInternerConnection;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.log4j.Logger;
@@ -15,6 +16,7 @@ public class Base {
     public WebDriver driver;
     public static Logger logger = Logger.getLogger(Base.class);
     checkInternerConnection connection = new checkInternerConnection();
+    Send_TestReport_By_Email email = new Send_TestReport_By_Email();
     ExtentReport extentReport = new ExtentReport();
     //ExcelReport report = new ExcelReport();
 
@@ -33,7 +35,8 @@ public class Base {
     @AfterTest
     public void teardown() throws Exception {
         extentReport.endTest(); // create extent report
+        email.sendEmail();
         //report.ExcelReport(); // create excel report
-        driver.close();
+        //driver.close();
     }
 }

@@ -7,49 +7,92 @@ package com.bridgelabz.utils;
 
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeBodyPart;
 import javax.mail.internet.MimeMessage;
+import javax.mail.internet.MimeMultipart;
+import java.io.File;
+import java.io.IOException;
 import java.util.Properties;
 
 public class Send_TestReport_By_Email {
-    public static void main(String[] args) {
 
-        final String username = "SMTP KEY VALUE";
-        final String password = "9paQMkWDmPYr3O7x";
-
+    public void sendEmail() {
+        // Create object of Property file
         Properties props = new Properties();
-        props.put("mail.smtp.auth", true);
-        props.put("mail.smtp.starttls.enable", true);
-        props.put("mail.smtp.host", "smtp-relay.sendinblue.com");
-        props.put("mail.smtp.port", "587");
-        props.put("mail.smtp.ssl.trust", "smtp-relay.sendinblue.com");
-        props.put("mail.smtp.starttls.enable", "true");
 
-        Session session = Session.getInstance(props,
-                new Authenticator() {
+        // this will set host of server- you can change based on your requirement
+        props.put("mail.smtp.host", "smtp.gmail.com");
+
+        // set the port of socket factory
+        props.put("mail.smtp.socketFactory.port", "465");
+
+        // set socket factory
+        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+
+        // set the authentication to true
+        props.put("mail.smtp.auth", "true");
+
+        // set the port of SMTP server
+        props.put("mail.smtp.port", "465");
+
+        // This will handle the complete authentication
+        Session session = Session.getDefaultInstance(props,
+                new javax.mail.Authenticator() {
+
                     protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(username, password);
+                        return new PasswordAuthentication("mansukh99@gmail.com", "Passw0rd1@2");
                     }
                 });
-
         try {
-            session.getProperties().put("mail.smtp.ssl.trust", "smtp.gmail.com");
-            session.getProperties().put("mail.smtp.starttls.enable", "true");
-
+            // Create object of MimeMessage class
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("no-reply@gmail.com"));
-            message.setRecipients(Message.RecipientType.TO,
-                    InternetAddress.parse("test@gmail.com"));
-            message.setSubject("Testing Subject");
-            message.setText("Dear Mail Crawler,"
-                    + "\n\n No spam to my email, please!");
 
+            // Set the from address
+            message.setFrom(new InternetAddress("mansukhmayur99@gmail.com"));
+
+            // Set the recipient address
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("tushar1chawat@gmail.com"));
+
+            // Add the subject link
+            message.setSubject("Extent Report");
+
+            // Create object to add multimedia type content
+            BodyPart messageBodyPart1 = new MimeBodyPart();
+
+            // Set the body of email
+            messageBodyPart1.setText("Dear Sir,\n\nPlease find the attachment for extent report for BookswagonAutomationProject.");
+
+            // Create another object to add another content
+            MimeBodyPart messageBodyPart2 = new MimeBodyPart();
+
+            // Mention the file which you want to send
+            String filename = "nullExtentReportResults.html";
+
+            File att = new File(new File("/Users/manojmansukh/IdeaProjects/BooksWagon_WebApp_Automate"), filename);
+            messageBodyPart2.attachFile(att);
+
+            // set the file
+            messageBodyPart2.setFileName(filename);
+
+            // Create object of MimeMultipart class
+            Multipart multipart = new MimeMultipart();
+
+            // add body part 1
+            multipart.addBodyPart(messageBodyPart1);
+
+            // add body part 2
+            multipart.addBodyPart(messageBodyPart2);
+
+            // set the content
+            message.setContent(multipart);
+
+            // finally send the email
             Transport.send(message);
 
-            System.out.println("Done");
+            System.out.println("=====Email Sent=====");
 
-        } catch (MessagingException e) {
+        } catch (MessagingException | IOException e) {
             throw new RuntimeException(e);
         }
     }
 }
-

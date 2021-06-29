@@ -6,11 +6,14 @@
 package com.bridgelabz.test;
 
 import com.bridgelabz.base.Base;
+import com.bridgelabz.listener.CustomListener;
 import com.bridgelabz.pages.LoginPage;
 import com.bridgelabz.utils.DataDrivenMethod;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(CustomListener.class)
 public class LoginWithMultipleData extends Base {
 
     @Test

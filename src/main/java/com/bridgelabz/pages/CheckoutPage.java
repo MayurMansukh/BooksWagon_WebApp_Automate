@@ -1,14 +1,13 @@
 package com.bridgelabz.pages;
 
+import com.bridgelabz.base.Base;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-import static com.bridgelabz.base.Base.logger;
-
-public class CheckoutPage {
+public class CheckoutPage extends Base {
 
     @FindBy(xpath = "//*[@id=\"ctl00_cpBody_btnCCAvenue\"]")
     WebElement payNowWithBtn;

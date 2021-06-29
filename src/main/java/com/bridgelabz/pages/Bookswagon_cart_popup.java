@@ -5,7 +5,6 @@
  */
 package com.bridgelabz.pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,15 +26,26 @@ public class Bookswagon_cart_popup {
     @FindBy(partialLinkText = "Greatest Horror")
     WebElement BooksSelect;
 
+    @FindBy(xpath = "//*[@id=\"BookCart_lvCart_ctrl0_txtQty\"]")
+    WebElement quantityBox;
+
     @FindBy(xpath = "//*[@id=\"ctl00_phBody_ProductDetail_divAddtoCart\"]/a/input")
     WebElement BuyNowBtn;
-
 
     @FindBy(id = "cboxClose")
     WebElement closeBtn;
 
+    @FindBy(name = "BookCart$lvCart$imgPayment")
+    WebElement placeOrderBtn;
+
     @FindBy(xpath = "//*[@id=\"topright-menu\"]/div[2]/div[1]/a")
     WebElement CartBtn;
+
+    @FindBy(xpath = "//*[@id=\"BookCart_lvCart_ctrl0_rngQty\"]")
+    WebElement errorMsg;
+
+    @FindBy(xpath = "//*[@id=\"ctl00_cpBody_OrderSummary_lblTotalItems\"]")
+    WebElement itmsCount;
 
 
 
@@ -45,12 +55,22 @@ public class Bookswagon_cart_popup {
 
     }
 
-    public void addToCart() {
+    public void login() throws InterruptedException {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.clickLogin();
+        loginPage.enterUserName("mansukhmayur99@gmail.com");
+        loginPage.enterPassword("Password1@2");
+        loginPage.clickSubmitBtn();
+        Thread.sleep(1000);
+    }
+
+    public void addToCart() throws InterruptedException {
         logger.info("add product into cart");
         searchText.sendKeys("Horror");
         searchBtn.click();
         BooksSelect.click();
         BuyNowBtn.click();
+        Thread.sleep(1000);
         closeBtn.click();
     }
 
@@ -59,20 +79,33 @@ public class Bookswagon_cart_popup {
         CartBtn.click();
     }
 
-    public void updateQuantity() throws InterruptedException {
+    public void updatePostiveQuantity() throws InterruptedException {
         logger.info("update quantity");
         driver.switchTo().frame(1);
-        WebElement textbox = driver.findElement(By.xpath("//*[@id=\"BookCart_lvCart_ctrl0_txtQty\"]"));
-        textbox.sendKeys(Keys.BACK_SPACE);
-        textbox.sendKeys(Keys.NUMPAD2);
-        textbox.sendKeys(Keys.ENTER);
+        quantityBox.clear();
+        quantityBox.sendKeys("2");
+        quantityBox.sendKeys(Keys.ENTER);
+        Thread.sleep(500);
+        placeOrderBtn.click();
         Thread.sleep(2000);
-        WebElement closebox = driver.findElement(By.xpath("//*[@id=\"BookCart_uplnShopping\"]/div[4]/table/tbody/tr/td[1]/a/span"));
-        closebox.click();
     }
 
-    public String cartUpdateValidation() {
-        String cart = CartBtn.getText();
+    public void updateNegetiveQuantity() throws InterruptedException {
+        driver.switchTo().frame(1);
+        quantityBox.clear();
+        quantityBox.sendKeys("-1");
+//        quantityBox.sendKeys(Keys.ENTER);
+//        quantityBox.sendKeys(Keys.ENTER);
+        Thread.sleep(2000);
+    }
+
+    public String cartUpdatePostiveValidation() {
+        String cart = itmsCount.getText();
+        return cart;
+    }
+
+    public String cartUpdateNegetiveValidation() {
+        String cart = errorMsg.getText();
         return cart;
     }
 }

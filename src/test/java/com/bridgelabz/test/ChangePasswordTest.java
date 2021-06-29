@@ -1,10 +1,18 @@
+/**
+ * Description : add Test to check check user chang account password
+ * Author      : Mayur Mansukh
+ * Date        : 29/6/21
+ */
 package com.bridgelabz.test;
 
 import com.bridgelabz.base.Base;
+import com.bridgelabz.listener.CustomListener;
 import com.bridgelabz.pages.ChangePasswordPage;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(CustomListener.class)
 public class ChangePasswordTest  extends Base {
 
     @Test

@@ -29,6 +29,9 @@ public class ChangePasswordPage extends Base {
     @FindBy(xpath = "//*[@id=\"ctl00_phBody_ChangePassword_plnPwd\"]/div/div[6]/table/tbody/tr[2]/td[2]/a/input")
     WebElement cancelBtn;
 
+    @FindBy(xpath = "//*[@id=\"ctl00_phBody_ChangePassword_lblmsg\"]")
+    WebElement errorMsg;
+
     public ChangePasswordPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -60,4 +63,10 @@ public class ChangePasswordPage extends Base {
         changePasswordBtn.click();
         //cancelBtn.click();
     }
+
+    public String testValidation(){
+        String message = errorMsg.getText();
+        return message;
+    }
+
 }

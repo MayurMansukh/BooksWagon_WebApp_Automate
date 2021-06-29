@@ -18,7 +18,7 @@ public class TakeScreenshot extends Base {
     public  void takeScreenshot(String testMethodName) {
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
-            FileUtils.copyFile(screenshot, new File("C:\\Users\\admin\\IdeaProjects\\Naukri.com_Web_Application\\ScreenshotsFile\\" + testMethodName + " " + ".jpg"));
+            FileUtils.copyFile(screenshot, new File("/Users/manojmansukh/IdeaProjects/BooksWagon_WebApp_Automate/Screenshot" + testMethodName + " " + ".jpg"));
         } catch (IOException e) {
             System.out.println("exception:" + e);
             e.printStackTrace();

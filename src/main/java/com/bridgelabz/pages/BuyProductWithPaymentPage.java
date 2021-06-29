@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import static com.bridgelabz.base.Base.logger;
 
@@ -41,6 +42,10 @@ public class BuyProductWithPaymentPage {
     @FindBy(xpath = "//*[@id=\"ctl00_cpBody_plnLogged\"]/div/div/div/a")
     WebElement continueBtn;
 
+    @FindBy(xpath = "//*[@id=\"ctl00_cpheading_Message\"]")
+    WebElement msg;
+
+
     public BuyProductWithPaymentPage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -52,9 +57,10 @@ public class BuyProductWithPaymentPage {
         loginPage.enterUserName("mansukhmayur99@gmail.com");
         loginPage.enterPassword("Password1@2");
         loginPage.clickSubmitBtn();
+        Assert.assertEquals(driver.getCurrentUrl(), "https://www.bookswagon.com/myaccount.aspx");
     }
 
-    public void addToCart() {
+    public void addToCart() throws InterruptedException {
         logger.info("add product into cart");
         searchText.sendKeys("Horror");
         searchBtn.click();
@@ -62,16 +68,23 @@ public class BuyProductWithPaymentPage {
         BuyNowBtn.click();
         closeBtn.click();
         CartBtn.click();
+        Assert.assertEquals(driver.getCurrentUrl(), "https://www.bookswagon.com/book/50-greatest-horror-stories-terry/9789353043636");
     }
 
     public void placeOrder() throws InterruptedException {
         logger.info("Place order");
         driver.switchTo().frame(1);
-        Thread.sleep(500);
+        Thread.sleep(2000);
         placeOrderBtn.click();
         driver.switchTo().parentFrame();
-        Thread.sleep(500);
+        Thread.sleep(2000);
         continueBtn.click();
+        Assert.assertEquals(driver.getCurrentUrl(), "https://www.bookswagon.com/shippingoption.aspx");
+    }
+
+    public String testValidation(){
+        String message = msg.getText();
+        return message;
     }
 
 }
