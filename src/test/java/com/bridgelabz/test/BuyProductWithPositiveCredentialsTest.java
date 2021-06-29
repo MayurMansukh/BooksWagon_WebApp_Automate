@@ -39,4 +39,5 @@ public class BuyProductWithPositiveCredentialsTest extends Base {
         Assert.assertEquals(buyProduct.testValidation(),"Thank you for shopping with us. However,the transaction has been declined.");
     }
 
+
 }
