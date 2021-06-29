@@ -28,7 +28,6 @@ public class LoginWithMultipleData extends Base {
             Thread.sleep(1000);
             String username1 = String.valueOf(sheet.getRow(i).getCell(0));
             String password1 = String.valueOf(sheet.getRow(i).getCell(1));
-
             loginPage.enterUserName(username1);
             Thread.sleep(1000);
             loginPage.enterPassword(password1);

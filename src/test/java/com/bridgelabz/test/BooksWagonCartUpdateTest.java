@@ -7,7 +7,7 @@ package com.bridgelabz.test;
 
 import com.bridgelabz.base.Base;
 import com.bridgelabz.listener.CustomListener;
-import com.bridgelabz.pages.Bookswagon_cart_popup;
+import com.bridgelabz.pages.Bookswagon_cart_Update;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
@@ -17,7 +17,7 @@ public class BooksWagonCartUpdateTest extends Base {
 
     @Test
     public void AddToCart() throws Exception {
-        Bookswagon_cart_popup cart_popup = new Bookswagon_cart_popup(driver);
+        Bookswagon_cart_Update cart_popup = new Bookswagon_cart_Update(driver);
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.bookswagon.com/");
         cart_popup.login();
         cart_popup.addToCart();

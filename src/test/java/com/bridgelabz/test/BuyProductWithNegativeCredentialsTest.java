@@ -20,7 +20,7 @@ public class BuyProductWithNegativeCredentialsTest extends Base {
         BuyProductWithNegativeCredentials buyProductFail = new BuyProductWithNegativeCredentials(driver);
         buyProductFail.addToCart();
         buyProductFail.placeOrder();
-        buyProductFail.loginPage();
+        buyProductFail.loginWithNegetiveData();
         Assert.assertEquals(buyProductFail.testNegetiveValidation(),"Invalid E-mail");
     }
 }

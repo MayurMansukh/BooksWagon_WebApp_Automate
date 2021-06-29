@@ -5,7 +5,6 @@
  */
 package com.bridgelabz.pages;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,7 +13,7 @@ import org.testng.Assert;
 
 import static com.bridgelabz.base.Base.logger;
 
-public class BuyProductWithPaymentPage {
+public class BuyProductWithPositiveCredentials {
 
     public WebDriver driver;
 
@@ -46,7 +45,7 @@ public class BuyProductWithPaymentPage {
     WebElement msg;
 
 
-    public BuyProductWithPaymentPage(WebDriver driver) {
+    public BuyProductWithPositiveCredentials(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }

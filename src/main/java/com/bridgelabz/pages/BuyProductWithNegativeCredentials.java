@@ -55,7 +55,7 @@ public class BuyProductWithNegativeCredentials {
         PageFactory.initElements(driver, this);
     }
 
-    public void loginPage() throws InterruptedException {
+    public void loginWithNegetiveData() throws InterruptedException {
         driver.switchTo().parentFrame();
         Thread.sleep(2000);
         userName.sendKeys("mansukhmayur99");

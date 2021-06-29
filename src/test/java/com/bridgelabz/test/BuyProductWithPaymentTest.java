@@ -18,7 +18,7 @@ public class BuyProductWithPaymentTest extends Base {
 
     @Test
     public void buy_product_With_Payment() throws InterruptedException, IOException {
-        BuyProductWithPaymentPage buyProduct = new BuyProductWithPaymentPage(driver);
+        BuyProductWithPositiveCredentials buyProduct = new BuyProductWithPositiveCredentials(driver);
         ShippingAddressPage shipping = new ShippingAddressPage(driver);
         ReviewOrderPage review = new ReviewOrderPage(driver);
         CheckoutPage checkout = new CheckoutPage(driver);

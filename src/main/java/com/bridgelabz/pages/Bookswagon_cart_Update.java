@@ -13,7 +13,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import static com.bridgelabz.base.Base.logger;
 
-public class Bookswagon_cart_popup {
+public class Bookswagon_cart_Update {
 
     public WebDriver driver;
 
@@ -49,7 +49,7 @@ public class Bookswagon_cart_popup {
 
 
 
-    public Bookswagon_cart_popup(WebDriver driver) {
+    public Bookswagon_cart_Update(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
 
@@ -94,8 +94,6 @@ public class Bookswagon_cart_popup {
         driver.switchTo().frame(1);
         quantityBox.clear();
         quantityBox.sendKeys("-1");
-//        quantityBox.sendKeys(Keys.ENTER);
-//        quantityBox.sendKeys(Keys.ENTER);
         Thread.sleep(2000);
     }
 

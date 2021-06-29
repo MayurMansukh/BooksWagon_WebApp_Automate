@@ -1,5 +1,6 @@
 package com.bridgelabz.base;
 
+import com.bridgelabz.utils.ExcelReport;
 import com.bridgelabz.utils.ExtentReport;
 import com.bridgelabz.utils.Send_TestReport_By_Email;
 import com.bridgelabz.utils.checkInternerConnection;
@@ -18,7 +19,7 @@ public class Base {
     checkInternerConnection connection = new checkInternerConnection();
     Send_TestReport_By_Email email = new Send_TestReport_By_Email();
     ExtentReport extentReport = new ExtentReport();
-    //ExcelReport report = new ExcelReport();
+    ExcelReport report = new ExcelReport();
 
     @BeforeTest
     public void setup() {
@@ -36,7 +37,7 @@ public class Base {
     public void teardown() throws Exception {
         extentReport.endTest(); // create extent report
         email.sendEmail();
-        //report.ExcelReport(); // create excel report
-        //driver.close();
+        report.ExcelReport(); // create excel report
+        driver.close();
     }
 }
