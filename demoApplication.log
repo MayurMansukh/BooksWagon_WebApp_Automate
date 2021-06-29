@@ -1107,3 +1107,9 @@
 [main] INFO  com.bridgelabz.base.Base  - add product into cart
 [main] INFO  com.bridgelabz.base.Base  - click cart btn
 [main] INFO  com.bridgelabz.base.Base  - update quantity
+[main] INFO  com.bridgelabz.base.Base  - user loging
+[main] INFO  com.bridgelabz.base.Base  - click login Btn
+[main] INFO  com.bridgelabz.base.Base  - enter user name
+[main] INFO  com.bridgelabz.base.Base  - enter password
+[main] INFO  com.bridgelabz.base.Base  - click submit btn
+[main] INFO  com.bridgelabz.base.Base  - click user change_Password opt
