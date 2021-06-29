@@ -40,7 +40,7 @@ public class Send_TestReport_By_Email {
                 new javax.mail.Authenticator() {
 
                     protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication("mansukh99@gmail.com", "Passw0rd1@2");
+                        return new PasswordAuthentication("mansukhmayur99@gmail.com", "P@ssw0rd1@2");
                     }
                 });
         try {

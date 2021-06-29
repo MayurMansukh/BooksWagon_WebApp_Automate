@@ -36,7 +36,7 @@ public class Base {
     @AfterTest
     public void teardown() throws Exception {
         extentReport.endTest(); // create extent report
-        email.sendEmail();
+        //email.sendEmail();
         report.ExcelReport(); // create excel report
         driver.close();
     }
