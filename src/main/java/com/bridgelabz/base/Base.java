@@ -21,7 +21,7 @@ public class Base {
 
     @BeforeTest
     public void setup() {
-        System.setProperty("Webdriver.chrome.driver","C:\\WINDOWS\\system32\\config\\systemprofile\\.cache\\selenium\\chromedriver\\win32\\91.0.4472.101\\chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(100, TimeUnit.SECONDS);
