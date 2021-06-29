@@ -1,6 +1,5 @@
 package com.bridgelabz.base;
 
-import com.bridgelabz.utils.ExcelReport;
 import com.bridgelabz.utils.ExtentReport;
 import com.bridgelabz.utils.Send_TestReport_By_Email;
 import com.bridgelabz.utils.checkInternerConnection;
