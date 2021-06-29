@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import java.io.IOException;
 
 @Listeners(CustomListener.class)
-public class BuyProductWithPaymentTest extends Base {
+public class BuyProductWithPositiveCredentialsTest extends Base {
 
     @Test
     public void buy_product_With_Payment() throws InterruptedException, IOException {
@@ -36,7 +36,7 @@ public class BuyProductWithPaymentTest extends Base {
         Thread.sleep(500);
         checkout.selectPaymentOpt();
         Thread.sleep(500);
-        Assert.assertEquals(buyProduct.testValidation(),"TThank you for shopping with us. However,the transaction has been declined.");
+        Assert.assertEquals(buyProduct.testValidation(),"Thank you for shopping with us. However,the transaction has been declined.");
     }
 
 }

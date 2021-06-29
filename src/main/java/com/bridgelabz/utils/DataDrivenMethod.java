@@ -16,7 +16,7 @@ import java.io.IOException;
 public class DataDrivenMethod {
 
     public static XSSFWorkbook excel_utils_base() throws IOException {
-        File file = new File("C:\\Users\\admin\\IdeaProjects\\BooksWagon_WebApp_Automate\\Excel\\BooksWagonData.xlsx");
+        File file = new File("/Users/manojmansukh/IdeaProjects/BooksWagon_WebApp_Automate/Excel/BooksWagonData.xlsx");
         FileInputStream fileInputStream = new FileInputStream(file);
         XSSFWorkbook workbook = new XSSFWorkbook(fileInputStream);
         return workbook;

@@ -20,8 +20,8 @@ public class LoginWithMultipleData extends Base {
     public void LoginTest() throws Exception {
         DataDrivenMethod drivenMethod = new DataDrivenMethod();
         LoginPage loginPage = new LoginPage(driver);
-
         XSSFSheet sheet = drivenMethod.excel_utils_base().getSheetAt(0);
+
         for (int i = 1; i <= sheet.getLastRowNum(); i++) {
             System.out.println("test started with data " + i);
             loginPage.clickLogin();
