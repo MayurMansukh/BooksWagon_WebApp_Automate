@@ -22,6 +22,7 @@ public class BuyProductWithPositiveCredentialsTest extends Base {
         ShippingAddressPage shipping = new ShippingAddressPage(driver);
         ReviewOrderPage review = new ReviewOrderPage(driver);
         CheckoutPage checkout = new CheckoutPage(driver);
+        driver.get("https://www.bookswagon.com/");
 
         Assert.assertEquals(driver.getCurrentUrl(), "https://www.bookswagon.com/");
         buyProduct.loginPage();
